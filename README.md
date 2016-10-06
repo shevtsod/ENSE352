@@ -4,7 +4,6 @@ My solutions to labs in ENSE 352 - Computer Architecture Fundamentals
 ##Overview
 > **Lab 2** - Introduction to ARM Assembly  
 > **Lab 3** - ARM Assembly Continued
-
 >**Lab 4** - Hex Code Reverse Engineering
 
 ##Compilation
