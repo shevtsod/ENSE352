@@ -26,12 +26,12 @@ then press `Ctrl + F5` to start/stop debug session.
 
 ##Details
 ###Lab 2 - Introduction to ARM Assembly
->TBA
+Introduction to Keil uVision and ARM assembly for the Cortex-M3, volatile (RAM, registers) and non-volatile (ROM, Flash) memory.
 
 ###Lab 3 - ARM Assembly Continued
 Implemented bit-level factorial operation and string processing.
 
 ###Lab 4 - Hex Code Reverse Engineering
->TBA
+A hex file `lab4.hex` was entered as the executable of a program and analyzed in the IDE to be able to modify the machine code and the functionality of the program.
 
 ...
