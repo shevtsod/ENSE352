@@ -17,19 +17,19 @@ On line 2 of the hex file, there is the 4 byte value 1348 as well.
 
 Instruction order:
 
-MEMORY		INSTR HEX	INSTR TYPE	INSTR	
-0x08000008	4813 		LDR 		r0,[pc,#76]
-0x08000010	F04F5200 	MOV 		r2, #0x20000000
-0x08000014	7801		LDRB 		r1,[r0,#0x00]
-0x08000016	2900		CMP		r1,#0x00
-0x08000018	D009		BEQ		0x0800002E
-0x0800001A	2920		CMP		r1,#0x20
-0x0800001C	D001		BEQ		0x08000022
-0x0800001E	F1A10101	SUB		r1,r1,#0x01
-0x08000022	7011		STRB		r1,[r2,#0x00]
-0x08000024	F1000001	ADD		r0,#0x01
-0x08000028	F1020201	ADD		r2,r2,#0x01
-0x0800002C	E7F2		B		0x08000014
+MEMORY		    INSTR HEX	    INSTR TYPE	    INSTR
+0x08000008	  4813 		      LDR 		        r0,[pc,#76]
+0x08000010	  F04F5200     	MOV 		        r2, #0x20000000
+0x08000014	  7801		      LDRB 		        r1,[r0,#0x00]
+0x08000016	  2900		      CMP		          r1,#0x00
+0x08000018	  D009		      BEQ		          0x0800002E
+0x0800001A	  2920		      CMP		          r1,#0x20
+0x0800001C	  D001		      BEQ		          0x08000022
+0x0800001E	  F1A10101    	SUB		          r1,r1,#0x01
+0x08000022	  7011		      STRB		        r1,[r2,#0x00]
+0x08000024	  F1000001     	ADD		          r0,#0x01
+0x08000028	  F1020201	    ADD		          r2,r2,#0x01
+0x0800002C	  E7F2		      B		            0x08000014
 .
 .
 .
