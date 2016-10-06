@@ -1,0 +1,47 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html><head>
+<title>Static Call Graph - [.\Objects\lab3.axf]</title></head>
+<body><HR>
+<H1>Static Call Graph for image .\Objects\lab3.axf</H1><HR>
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060300: Last Updated: Thu Sep 29 16:37:38 2016
+<BR><P>
+<H3>Maximum Stack Usage =          0 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
+Call chain for Maximum Stack Depth:</H3>
+
+<P>
+<H3>
+Mutually Recursive functions
+</H3> <LI><a href="#[1]">Reset_Handler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[1]">Reset_Handler</a><BR>
+</UL>
+<P>
+<H3>
+Function Pointers
+</H3><UL>
+ <LI><a href="#[1]">Reset_Handler</a> from lab3.o(MYCODE) referenced from lab3.o(RESET)
+</UL>
+<P>
+<H3>
+Global Symbols
+</H3>
+<P><STRONG><a name="[1]"></a>Reset_Handler</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, lab3.o(MYCODE))
+<BR><BR>[Calls]<UL><LI><a href="#[1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_Handler
+<LI><a href="#[3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;countVowels
+<LI><a href="#[2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;factorial
+</UL>
+<BR>[Called By]<UL><LI><a href="#[1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_Handler
+</UL>
+<P>
+<H3>
+Local Symbols
+</H3>
+<P><STRONG><a name="[2]"></a>factorial</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, lab3.o(MYCODE))
+<BR><BR>[Called By]<UL><LI><a href="#[1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_Handler
+</UL>
+
+<P><STRONG><a name="[3]"></a>countVowels</STRONG> (Thumb, 66 bytes, Stack size 0 bytes, lab3.o(MYCODE))
+<BR><BR>[Called By]<UL><LI><a href="#[1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Reset_Handler
+</UL>
+<P>
+<H3>
+Undefined Global Symbols
+</H3><HR></body></html>

@@ -1,0 +1,138 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;FILENAME:
+    2 00000000         ;  lab2.s
+    3 00000000         ;
+    4 00000000         ;PURPOSE:
+    5 00000000         ;  Introduction to MDK-ARM and
+    6 00000000         ;  writing assembly code for STM32F103RB
+    7 00000000         ;
+    8 00000000         ;AUTHOR:
+    9 00000000         ;  Daniel Shevtsov (SID: 200351253)
+   10 00000000         
+   11 00000000         ;Directives
+   12 00000000                 PRESERVE8
+   13 00000000                 THUMB
+   14 00000000         
+   15 00000000                 AREA             RESET, DATA, READONLY
+   16 00000000                 EXPORT           __Vectors
+   17 00000000         
+   18 00000000 20002000 
+                       __Vectors
+                               DCD              0x20002000  ;
+   19 00000004 00000000        DCD              Reset_Handler ;
+   20 00000008         
+   21 00000008                 ALIGN
+   22 00000008         
+   23 00000008         
+   24 00000008         ;Linker requires Reset_Handler
+   25 00000008                 AREA             MYCODE, CODE, READONLY
+   26 00000000                 ENTRY
+   27 00000000         
+   28 00000000                 EXPORT           Reset_Handler
+   29 00000000         
+   30 00000000         Reset_Handler
+   31 00000000         Start
+   32 00000000         
+   33 00000000         ;Let Rx = R0, Ry = R1, Rz = R2.
+   34 00000000         
+   35 00000000 F04F 0101       MOV              R1, #0x1
+   36 00000004 F04F 0202       MOV              R2, #0x2
+   37 00000008         
+   38 00000008         ;Add Ry, Rz and store in Rx.
+   39 00000008 EB01 0002       ADD              R0,  R1, R2
+   40 0000000C         
+   41 0000000C F04F 32FF       MOV              R2, #0xFFFFFFFF
+   42 00000010         
+   43 00000010         ;Add Ry, Rz and store in Rx. Store condition codes.
+   44 00000010 1888            ADDS             R0,  R1, R2
+   45 00000012         
+   46 00000012         ;Push Rx, Ry, Rz onto the stack
+   47 00000012 B407            PUSH             {R0, R1, R2}
+   48 00000014         
+   49 00000014 F04F 0102       MOV              R1, #0x2
+   50 00000018         
+   51 00000018         ;Add Ry, Rz and store in Rx. Store condition codes.
+   52 00000018 1888            ADDS             R0,  R1, R2
+   53 0000001A         
+   54 0000001A F06F 4100       MOV              R1, #0x7FFFFFFF
+   55 0000001E F06F 4200       MOV              R2, #0x7FFFFFFF
+   56 00000022         
+   57 00000022         ;Add Ry, Rz and store in Rx. Store condition codes.
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   58 00000022 1888            ADDS             R0,  R1, R2
+   59 00000024         
+   60 00000024         ;Loop back to Start
+   61 00000024 E7EC            B                Start
+   62 00000026         
+   63 00000026 00 00           ALIGN
+   64 00000028                 END
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
+ork --depend=.\objects\lab2.d -o.\objects\lab2.o -IC:\Keil_v5\ARM\RV31\INC -IC:
+\Keil_v5\ARM\CMSIS\Include -IC:\Keil_v5\ARM\Inc\ST\STM32F10x --predefine="__UVI
+SION_VERSION SETA 515" --list=.\listings\lab2.lst lab2.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 15 in file lab2.s
+   Uses
+      None
+Comment: RESET unused
+__Vectors 00000000
+
+Symbol: __Vectors
+   Definitions
+      At line 18 in file lab2.s
+   Uses
+      At line 16 in file lab2.s
+Comment: __Vectors used once
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+MYCODE 00000000
+
+Symbol: MYCODE
+   Definitions
+      At line 25 in file lab2.s
+   Uses
+      None
+Comment: MYCODE unused
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 30 in file lab2.s
+   Uses
+      At line 19 in file lab2.s
+      At line 28 in file lab2.s
+
+Start 00000000
+
+Symbol: Start
+   Definitions
+      At line 31 in file lab2.s
+   Uses
+      At line 61 in file lab2.s
+Comment: Start used once
+3 symbols
+336 symbols in table
