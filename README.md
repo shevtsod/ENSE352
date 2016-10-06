@@ -20,7 +20,7 @@ then press `Ctrl + F5` to start/stop debug session.
  1. Create a project in Keil uVision, choose `Legacy` under `Software Packs`, search for `STM32F100RB` and select it.
  2. Press `No` when prompted to add STM32 Startup Code.
  3. Navigate to `Project -> Options for Target` . On the new window, navigate to the `Debug` tab.
- 4. In the upper right corner, select `ST-Link Debugger` from the list. Click the `Use` button to the left of the box.
+ 4. In the upper right corner, select `ST-Link Debugger` from the list. Click the `Use` button to the left of the box. Click `Settings` and select `SW` instead of the default `JTAG` in the `Port` field, and then click `OK`.
  5. Under the `Flash` tab, select a Flash memory to download to. If none exists, select `Add` and find the `STM32F10x med density Flash`. Click `OK` to exit the dialog.
  6. Now you can flash the STM32F100RB device and debug on it.
 
