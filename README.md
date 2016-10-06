@@ -7,7 +7,6 @@ My solutions to labs in ENSE 352 - Computer Architecture Fundamentals
 
 ##Compilation
 These compilation instructions apply to **Keil uVision5** and **STM32F100RB** microcontroller.
-
 To compile in Keil uVision5, open the `*.uvproj` file in the folders (lab2, lab3, etc.)
 
 From there, go to
