@@ -4,6 +4,7 @@ My solutions to labs in ENSE 352 - Computer Architecture Fundamentals
 ##Overview
 > **Lab 2** - Introduction to ARM Assembly  
 > **Lab 3** - ARM Assembly Continued
+> **Lab 4** - Hex Code Reverse Engineering
 
 ##Compilation
 These compilation instructions apply to **Keil uVision5** and **STM32F100RB** microcontroller.
@@ -15,11 +16,22 @@ From there, go to
 
 then press `Ctrl + F5` to start/stop debug session.
 
+###Running on STM32F100RB
+ 1. Create a project in Keil uVision, choose `Legacy` under `Software Packs`, search for `STM32F100RB` and select it.
+ 2. Press `No` when prompted to add STM32 Startup Code.
+ 3. Navigate to `Project -> Options for Target` . On the new window, navigate to the `Debug` tab.
+ 4. In the upper right corner, select `ST-Link Debugger` from the list. Click the `Use` button to the left of the box.
+ 5. Under the `Flash` tab, select a Flash memory to download to. If none exists, select `Add` and find the `STM32F10x med density Flash`. Click `OK` to exit the dialog.
+ 6. Now you can flash the STM32F100RB device and debug on it.
+
 ##Details
 ###Lab 2 - Introduction to ARM Assembly
 >TBA
 
 ###Lab 3 - ARM Assembly Continued
 Implemented bit-level factorial operation and string processing.
+
+###Lab 4 - Hex Code Reverse Engineering
+>TBA
 
 ...
