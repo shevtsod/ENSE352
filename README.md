@@ -19,6 +19,6 @@ Then press `Ctrl + F5` to start/stop debug session.
 >TBA
 
 ###Lab 3 - ARM Assembly Continued
->TBA
+Implemented bit-level factorial operation and string processing.
 
 ...
