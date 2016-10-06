@@ -41,21 +41,19 @@ MEMORY		INSTR HEX	INSTR TYPE	INSTR
 0x0800005A
 end
 
-The program loads a string into register r0, the address 0x20000000 into r2, and r0 to r1
-The program then iterates through a loop. r1 is compared to 0x00 (null terminator), if true,
-moves right past the loop. THen r1 is compared to 0x20 (space), at which point the program
-moves to instruction STRB r1,[r2,#0x00]. Otherwise, the program subtracts 1 from r1, moving it backwards.
-at STRB, r2 position 0 is loaded into r1, then r0 and r2 are incremented by 1 to move to next character,
-and the loop returns to LDRB r1,[r0,#0x00].
-After the program completes, the message stores at 0x20000000 becomes:
-F0 4F e7 F2 02 01 F1 02 00 01 F1 00 70 11 01 01 F1 D4 F0 00 48 B7 21 01
-Initially, the program loads a string from the program counter, which starts at 0x08000008 (09000008 in little-endian
-because of sticky last bit).
-
 The initial value loaded into R0 is 08000038, but we want 08000042.
 
-After changing the 2nd to last line from 0038 to 0042, the message in RAM becomes:
+Before change:
+4E 4F 20 53 49 47 4E 41 4C 00
+
+This becomes:
+NO SIGNAL
+
+After changing the third to last line from 0038 to 0042, the message in RAM becomes:
 57 45 20 41 52 45 20 43 4F 4D 49 4E 47 20 46 4F 52 20 59 4F 55 00
 
 This becomes:
 WE ARE COMING FOR YOU
+
+0x08000038 and 0x08000042 represent two different lines of code in which different strings get
+stored into the register, so changing which line of code is called changes the string.
