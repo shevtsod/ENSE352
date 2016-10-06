@@ -1,0 +1,61 @@
+Hex file:
+
+:020000040800F2
+:100000000010002009000008134800F001F8FEE786
+:100010004FF000520178002909D0202901D0A1F128
+:100020000101117000F1010002F10102F2E74FF04D
+:1000300000011170704700004F5020544A484F4251
+:100040004D005846204253462044504E4A4F4820C7
+:0C005000475053205A505600380000085A
+:0400000508000009E6
+:00000001FF
+
+First line of code executed is 0x08000008 with 2 byte instruction 4813
+In the memory location 0x08000008, this becomes 1348 because of little-endian encoding.
+On line 2 of the hex file, there is the 4 byte value 1348 as well.
+
+
+Instruction order:
+
+MEMORY		INSTR HEX	INSTR TYPE	INSTR	
+0x08000008	4813 		LDR 		r0,[pc,#76]
+0x08000010	F04F5200 	MOV 		r2, #0x20000000
+0x08000014	7801		LDRB 		r1,[r0,#0x00]
+0x08000016	2900		CMP		r1,#0x00
+0x08000018	D009		BEQ		0x0800002E
+0x0800001A	2920		CMP		r1,#0x20
+0x0800001C	D001		BEQ		0x08000022
+0x0800001E	F1A10101	SUB		r1,r1,#0x01
+0x08000022	7011		STRB		r1,[r2,#0x00]
+0x08000024	F1000001	ADD		r0,#0x01
+0x08000028	F1020201	ADD		r2,r2,#0x01
+0x0800002C	E7F2		B		0x08000014
+.
+.
+.
+0x08000050
+0x08000052
+0x08000054
+0x08000056
+0x08000058
+0x0800005A
+end
+
+The program loads a string into register r0, the address 0x20000000 into r2, and r0 to r1
+The program then iterates through a loop. r1 is compared to 0x00 (null terminator), if true,
+moves right past the loop. THen r1 is compared to 0x20 (space), at which point the program
+moves to instruction STRB r1,[r2,#0x00]. Otherwise, the program subtracts 1 from r1, moving it backwards.
+at STRB, r2 position 0 is loaded into r1, then r0 and r2 are incremented by 1 to move to next character,
+and the loop returns to LDRB r1,[r0,#0x00].
+After the program completes, the message stores at 0x20000000 becomes:
+F0 4F e7 F2 02 01 F1 02 00 01 F1 00 70 11 01 01 F1 D4 F0 00 48 B7 21 01
+Initially, the program loads a string from the program counter, which starts at 0x08000008 (09000008 in little-endian
+because of sticky last bit).
+
+The initial value loaded into R0 is 08000038, but we want 08000042.
+
+After changing the 2nd to last line from 0038 to 0042, the message in RAM becomes:
+57 45 20 41 52 45 20 43 4F 4D 49 4E 47 20 46 4F 52 20 59 4F 55 00
+
+This becomes:
+WE ARE COMING FOR YOU
