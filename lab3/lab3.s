@@ -3,7 +3,8 @@
 ;
 ;PURPOSE:
 ;  Implement and test two functions:
-;    -allow calculating the factorial of 
+;    -allow calculating a factorial
+;    -count number of vowels in a string
 ;
 ;AUTHOR:
 ;  Daniel Shevtsov (SID: 200351253)
