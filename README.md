@@ -10,20 +10,25 @@ My solutions to labs in ENSE 352 - Computer Architecture Fundamentals
 ##Compilation
 These compilation instructions apply to **Keil uVision5** and **STM32F100RB** microcontroller.
 
-To compile in Keil uVision5, open the `*.uvproj` file in the folders (lab2, lab3, etc.)
+To compile in Keil uVision5, 
 
-From there, go to
+1. Create a project in Keil uVision, choose `Legacy` under `Software Packs`, search for `STM32F100RB` and select it.
+ 2. Press `No` when prompted to add STM32 Startup Code.
+
+You can either simulate the target using the debugger or connect an STM32F100RB via USB and follow `Running on STM32F100RB` below.
+
+Right click `Source Group 1` and import the `.s` file from this repository into the project.
+
+Then, go to
 >Project -> Build Target
 
 then press `Ctrl + F5` to start/stop debug session.
 
 ###Running on STM32F100RB
- 1. Create a project in Keil uVision, choose `Legacy` under `Software Packs`, search for `STM32F100RB` and select it.
- 2. Press `No` when prompted to add STM32 Startup Code.
- 3. Navigate to `Project -> Options for Target` . In the new window, navigate to the `Debug` tab.
- 4. In the upper right corner, select `ST-Link Debugger` from the list. Click the `Use` button to the left of the box. Click `Settings` and select `SW` instead of the default `JTAG` in the `Port` field, and then click `OK`.
- 5. Under the `Flash` tab, select a Flash memory to download to. If none exists, select `Add` and find the `STM32F10x med density Flash`. Click `OK` to exit the dialog.
- 6. Now you can flash the STM32F100RB device and debug on it. Press `F8` to download to the device and then `Ctrl + F5` to start/stop debug session.
+ 1. Navigate to `Project -> Options for Target` . In the new window, navigate to the `Debug` tab.
+ 2. In the upper right corner, select `ST-Link Debugger` from the list. Click the `Use` button to the left of the box. Click `Settings` and select `SW` instead of the default `JTAG` in the `Port` field, and then click `OK`.
+ 3. Under the `Flash` tab, select a Flash memory to download to. If none exists, select `Add` and find the `STM32F10x med density Flash`. Click `OK` to exit the dialog.
+ 4. Now you can flash the STM32F100RB device and debug on it. Press `F8` to download to the device and then `Ctrl + F5` to start/stop debug session.
 
 ##Details
 ###Lab 2 - Introduction to ARM Assembly
