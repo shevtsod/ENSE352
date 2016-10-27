@@ -42,53 +42,51 @@ Reset_Handler PROC
 	;; Copy the string of characters from flash to RAM buffer so it 
 	;; can be sorted  - Student to do
 	
-	
-	;Test string = "A"
-	;ptr to buffer in RAM containing the input string (string_buffer)
-	ldr r1,=string1
-	;ptr to auxiliary buffer in RAM used by subroutine "merge" (aux_buffer)
+	;Test string = "" (Empty string)
+	;R1: ptr to buffer in RAM containing the input string (string_buffer)
+	ldr r1,=string0
+	;R2: ptr to auxiliary buffer in RAM used by subroutine "merge" (aux_buffer)
 	mov r2,#RAM_START
-	;size of the string (contained in [size1] )
-	mov r3,#string1size	
+	;R3: size of the string (contained in [size1] )
+	mov r3,#string0size	
 	bl byte_copy					;Calling subroutine to store string into RAM
 	
-	;ptr to buffer in RAM containing the input string (string_buffer)
+	;R1: ptr to buffer in RAM containing the input string (string_buffer)
 	mov r1, r2
-	;ptr to auxiliary buffer in RAM used by subroutine "merge" (aux_buffer)
+	;R2: ptr to auxiliary buffer in RAM used by subroutine "merge" (aux_buffer)
 	add r2, r3
-	bl sort								;Calling subroutine to sort the characters in the buffer
+	bl sort
 	
-	
-	;Test string = "aB"
-	;ptr to buffer in RAM containing the input string (string_buffer)
-	ldr r1,=string2
-	;ptr to auxiliary buffer in RAM used by subroutine "merge" (aux_buffer)
+	;Test string = "A"
+	ldr r1,=string1
 	mov r2,#RAM_START
-	;size of the string (contained in [size1] )
+	mov r3,#string1size	
+	bl byte_copy
+	
+	mov r1, r2
+	add r2, r3
+	bl sort
+		
+	;Test string = "aB"
+	ldr r1,=string2
+	mov r2,#RAM_START
 	mov r3,#string2size	
 	bl byte_copy
 	
-	;ptr to buffer in RAM containing the input string (string_buffer)
 	mov r1, r2
-	;ptr to auxiliary buffer in RAM used by subroutine "merge" (aux_buffer)
 	add r2, r3
-	bl sort								;Calling subroutine to sort the characters in the buffer
+	bl sort
 	
 	
 	;Test string = "ABEFZACDGL"
-	;ptr to buffer in RAM containing the input string (string_buffer)
 	ldr r1,=string3
-	;ptr to auxiliary buffer in RAM used by subroutine "merge" (aux_buffer)
 	mov r2,#RAM_START
-	;size of the string (contained in [size1] )
 	mov r3,#string3size
 	bl byte_copy
 	
-	;ptr to buffer in RAM containing the input string (string_buffer)
 	mov r1, r2
-	;ptr to auxiliary buffer in RAM used by subroutine "merge" (aux_buffer)
-	add r2, #15
-	bl sort								;Calling subroutine to sort the characters in the buffer
+	add r2, #15			;Arbitrary offset,as long as buffers r1 and and r2 don't overlap.
+	bl sort
 
 
 	;; Finished, loop to label done forever.
@@ -96,6 +94,14 @@ done	b	done		; finished mainline code.
 	ENDP
 	
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+string0
+	dcb ""
+string0size equ . - string0
+
+	align
+size0
+	dcd string0size
+
 string1
 	dcb	"A"
 string1size	equ . - string1
@@ -149,9 +155,9 @@ no_stack_overflow_sort
 	MOV 	r10,#0
 
 
-	;If size_input_array is 1, end function.
+	;If size_input_array is 1 or 0, end function.
 	CMP R3, #1
-	BEQ endSort
+	BLE endSort
 	
 	;Else if size_input_array is 2, sort both elements and return.
 	CMP R3, #2
@@ -272,6 +278,9 @@ endSort
 ;;; Author: Prof. Karim Naqvi (Oct 2013)
 	ALIGN
 byte_copy  PROC
+	CMP R3, #0
+	BEQ end_byte_copy
+	
 	push {r1,r2,r3,r4}
 
 	mov r5, #0
@@ -286,6 +295,7 @@ loop
 	bne loop
     
 	pop	{r1,r2,r3,r4}
+end_byte_copy
 	bx	lr
 	ENDP
 
