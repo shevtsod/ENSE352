@@ -1,0 +1,16 @@
+# Created by Daniel Shevtsov
+
+### Keil uVision ###
+
+Listings/
+
+Objects/*.htm
+Objects/*.axf
+Objects/*.lnp
+Objects/*.o
+Objects/*.d
+Objects/*.d
+Objects/*.sct
+
+.uvopt
+.uvproj
