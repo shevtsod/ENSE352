@@ -38,7 +38,7 @@ Introduction to Keil uVision and ARM assembly for the Cortex-M3, volatile (RAM, 
 Implemented bit-level factorial operation and string processing.
 
 ###Lab 4 - Hex Code Reverse Engineering
-A hex file `lab4.hex` was entered as the executable of a program and analyzed in the IDE to be able to modify the machine code and the functionality of the program. See `lab4/lab4.txt` for explanation.  
+A hex file `Objects/lab4.hex` was entered as the executable of a program and analyzed in the IDE to be able to modify the machine code and the functionality of the program. See `lab4/lab4.txt` for explanation.  
 
 ###Lab 5 - Merge Sort
 Implemented a merge sort algorithm recursively by loading a string to RAM and modifying the positions of bytes in RAM to sort the characters of the string in ascending order.  
