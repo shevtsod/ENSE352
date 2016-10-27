@@ -12,5 +12,5 @@ Objects/*.d
 Objects/*.d
 Objects/*.sct
 
-.uvopt
-.uvproj
+*.uvopt
+*.uvproj
