@@ -1,4 +1,4 @@
-# ENSE352
+# ENSE 352
 My solutions to labs in ENSE 352 - Computer Architecture Fundamentals
 
 ##Overview
