@@ -13,7 +13,7 @@ These compilation instructions apply to **Keil uVision5** and the **STM32F100RB*
 To compile in Keil uVision5, 
 
 1. Create a new project, choose `Legacy` under `Software Packs`, search for `STM32F100RB` and select it.
- 2. Press `No` when prompted to add STM32 Startup Code.
+2. Press `No` when prompted to add STM32 Startup Code.
 
 You can either simulate the target using the debugger or connect an STM32F100RB via USB and follow `Running on STM32F100RB` below.
 
