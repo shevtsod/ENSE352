@@ -38,4 +38,5 @@ A hex file `lab4.hex` was entered as the executable of a program and analyzed in
 ###Lab 5 - Merge Sort
 Implemented a merge sort algorithm recursively by loading a string to RAM and modifying the positions of bytes in RAM to sort the characters of the string in ascending order.  
 
+---
 > Written with [StackEdit](https://stackedit.io/).
