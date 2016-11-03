@@ -6,6 +6,7 @@ My solutions to labs in ENSE 352 - Computer Architecture Fundamentals
 >**Lab 3** - ARM Assembly Continued  
 >**Lab 4** - Hex Code Reverse Engineering  
 >**Lab 5** - Merge Sort  
+>**Lab 6** - ARM Assembly Bit Manipulations
 
 ##Compilation
 These compilation instructions apply to **Keil uVision5** and the **STM32F100RB** microcontroller (optional).
@@ -44,6 +45,9 @@ Use of the `STM32F100RB` is required for this lab.
 
 ###Lab 5 - Merge Sort
 Implemented a merge sort algorithm recursively by loading a string to RAM and modifying the positions of bytes in RAM to sort the characters of the string in ascending order.  
+
+###Lab 6 - ARM Assembly Bit Manipulations
+Implemented 3 simple subroutines to handle setting, unsetting, and counting bits.
 
 ---
 > Written with [StackEdit](https://stackedit.io/).
