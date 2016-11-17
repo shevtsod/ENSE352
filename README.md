@@ -6,7 +6,8 @@ My solutions to labs in ENSE 352 - Computer Architecture Fundamentals
 >**Lab 3** - ARM Assembly Continued  
 >**Lab 4** - Hex Code Reverse Engineering  
 >**Lab 5** - Merge Sort  
->**Lab 6** - ARM Assembly Bit Manipulations
+>**Lab 6** - ARM Assembly Bit Manipulations  
+>**Lab 7** - Introduction to GPIO
 
 ##Compilation
 These compilation instructions apply to **Keil uVision5** and the **STM32F100RB** microcontroller (optional).
@@ -47,7 +48,10 @@ Use of the `STM32F100RB` is required for this lab.
 Implemented a merge sort algorithm recursively by loading a string to RAM and modifying the positions of bytes in RAM to sort the characters of the string in ascending order.  
 
 ###Lab 6 - ARM Assembly Bit Manipulations
-Implemented 3 simple subroutines to handle setting, unsetting, and counting bits.
+Implemented 3 simple subroutines to handle setting, resetting, and counting bits.
+
+###Lab 7 - Introduction to GPIO 
+Connected to General Purpose I/O on the `STM32F100RB` microcontroller to use bit manipulations to control devices on the board from assembly (switch, LEDs). Created routines for flashing alternating LEDs and forcing LED to stay on when a switch is held on. 
 
 ---
 > Written with [StackEdit](https://stackedit.io/).
