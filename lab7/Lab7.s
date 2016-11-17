@@ -1,3 +1,13 @@
+;FILENAME:
+;  lab7.s
+;
+;PURPOSE:
+;  Use GPIO to control onboard devices (swtich, LEDs)
+;
+;AUTHOR:
+;  Daniel Shevtsov (SID: 200351253)
+
+; Modified from:
 ; GPIO Test program - Dave Duguid, 2011
 ; Modified Trevor Douglas 2014
 
