@@ -1,6 +1,8 @@
 # ENSE 352
 My solutions to labs in ENSE 352 - Computer Architecture Fundamentals
 
+>**Note:** This lab was completed on Nov. 17, 2016  
+
 ##Overview
 >**Lab 2** - Introduction to ARM Assembly  
 >**Lab 3** - ARM Assembly Continued  
